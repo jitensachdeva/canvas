@@ -29,7 +29,12 @@ class Canvas < javax.swing.JPanel
 
   def addShape(shape)
     @shapes << shape
+    #shape.add_observer(self)
   end
+
+  # def process_observe_request
+  #   @frame.repaint
+  # end
 
   def paintComponent(graphics)
     super(graphics)
@@ -45,8 +50,13 @@ class Canvas < javax.swing.JPanel
   def keyReleased(javaEvent);end
   def mouseEntered(javaEvent);end
   def mouseExited(javaEvent);end
-  def mousePressed(javaEvent);end
-  def mouseReleased(javaEvent);end
+  def mousePressed(javaEvent)
+    @shapes.each {|shape| shape.mousePressed(javaEvent)}
+  end
+  def mouseReleased(javaEvent)
+    @shapes.each {|shape| shape.mouseReleased(javaEvent)}
+
+  end
 
   def mouseClicked(javaEvent)
     @shapes.each {|shape| shape.mouseClicked(javaEvent)}

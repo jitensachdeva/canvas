@@ -11,11 +11,21 @@ class Button
     @rectangle.render graphics
   end
 
-
-  def mouseClicked(javaEvent)
-    offset = 20
-    Kernel.puts "#{@label} -clicked: #{javaEvent.x} #{(javaEvent.y - offset)}" if @rectangle.within_boundary?(javaEvent.x,(javaEvent.y - offset) )
+  def mousePressed(javaEvent)
   end
 
+  def mouseReleased(javaEvent)
+  end
+
+  def mouseClicked(javaEvent)
+
+    Kernel.puts "#{@label} -clicked: #{javaEvent.x} #{(javaEvent.y - offset)}" if within_boundary?(javaEvent)
+  end
+
+
+  def within_boundary?(javaEvent)
+    offset = 20
+    @rectangle.within_boundary?(javaEvent.x,(javaEvent.y - offset) )
+  end
 
 end

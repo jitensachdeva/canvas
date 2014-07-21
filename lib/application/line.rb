@@ -17,5 +17,11 @@ class Line
   def mouseClicked(javaEvent)
   end
 
+  def mousePressed(javaEvent)
+  end
+
+  def mouseReleased(javaEvent)
+  end
+
 
 end

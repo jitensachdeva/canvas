@@ -23,6 +23,12 @@ class Rectangle
 
   def mouseClicked(javaEvents) end
 
+  def mousePressed(javaEvent)
+  end
+
+  def mouseReleased(javaEvent)
+  end
+
   #TODO add specs for within_boundary
   def within_boundary? (x, y)
     (x >= @x1 && x <= (@x1+@width)) && (y >= @y1 && y <= (@y1 + @height))
