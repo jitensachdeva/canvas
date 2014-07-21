@@ -1,6 +1,7 @@
 #Creating the line
 class Line
-  def initialize(x1,y1,x2,y2,color)
+  attr_writer :color
+   def initialize(x1,y1,x2,y2,color)
     @x1=x1
     @y1=y1
     @x2=x2
@@ -15,4 +16,6 @@ class Line
 
   def mouseClicked(javaEvent)
   end
+
+
 end

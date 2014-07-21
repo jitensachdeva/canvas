@@ -54,13 +54,3 @@ class Canvas < javax.swing.JPanel
 
 end
 
-canvas = Canvas.new
-# line1 = Line.new(0,0,100, 100, java.awt.Color.red)
-# line2 = Line.new(100,100,0, 10, java.awt.Color.black)
-button = Button.new(10,10, 100, 100,"First Button", java.awt.Color.blue)
-button1 = Button.new(10,10, 50, 50,"Second Button", java.awt.Color.red)
-# canvas.addShape(line1)
-# canvas.addShape(line2)
-canvas.addShape(button)
-canvas.addShape(button1)
-canvas.repaint
