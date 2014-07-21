@@ -19,7 +19,7 @@ describe 'Rectangle' do
       java_event = double(java.awt.event.MouseEvent)
       allow(java_event).to receive(:x).and_return(5)
       allow(java_event).to receive(:y).and_return(5)
-      expect(Kernel).to receive(:puts).with("Click: #{java_event.x} #{java_event.y}")
+      expect(Kernel).to_not receive(:puts)
       rectangle.mouseClicked(java_event)
     end
 
@@ -31,6 +31,14 @@ describe 'Rectangle' do
       allow(java_event).to receive(:y).and_return(130)
       expect(Kernel).to_not receive(:puts)
       rectangle.mouseClicked(java_event)
+    end
+  end
+
+  context "#within_boundary?" do
+    it "returns true for point within boundary" do
+      color =java.awt.Color.red
+      rectangle = Rectangle.new(0,0, 100, 100, color)
+      expect(rectangle.within_boundary?(50,50)).to eq(true)
     end
   end
 

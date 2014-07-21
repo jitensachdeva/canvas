@@ -13,6 +13,7 @@ describe '#addLine' do
     allow(frame).to receive(:add)
     allow(frame).to receive(:validate)
     allow(frame).to receive(:repaint)
+    allow(frame).to receive(:addMouseListener)
   }
 
   it 'should should add line for rendering' do
